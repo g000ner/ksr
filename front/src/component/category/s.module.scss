@@ -1,0 +1,36 @@
+
+.categoryButton {
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+
+    display: flex;
+    justify-content: space-between;
+
+    cursor: pointer;
+
+    .textСategory
+    {
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 33px;
+    }
+
+    .iconCategory
+    {
+        margin-top: 8px;
+        margin-left: 4px;
+        align-items: center;
+    }
+}
+
+// .dateButton:hover {
+//     background: #D9D9D9;
+//     color: #7635BD;
+// }
+
+// .dateButton:active {
+    
+//     background: #F5F5F5;
+// }
