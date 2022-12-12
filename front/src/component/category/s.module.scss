@@ -1,36 +1,49 @@
 
 .categoryButton {
-    background: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 4px;
-
     display: flex;
     justify-content: space-between;
-
+    background: #FFFFFF;
+    position:fixed;
+    z-index: 100;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
     cursor: pointer;
 
+    .Category{
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 4px;
+        display: flex;
+        margin-right: 2px;
+    }
     .textСategory
     {
+        margin-left: 2px;
         font-weight: 400;
-        font-size: 28px;
+        font-size: 24px;
         line-height: 33px;
     }
 
     .iconCategory
     {
         margin-top: 8px;
-        margin-left: 4px;
+        margin-left: 12px;
         align-items: center;
     }
 }
 
-// .dateButton:hover {
-//     background: #D9D9D9;
-//     color: #7635BD;
-// }
+details summary::-webkit-details-marker {
+    display: none
+  }
+  /* Убираем стандартный маркер Firefox */
+details > summary {
+    list-style: none;
+  }
 
-// .dateButton:active {
-    
-//     background: #F5F5F5;
-// }
+  .list {
+    & li {
+      position: relative;
+      padding-left: 8px;
+      margin-top: 8px;
+      margin-bottom: 12px;
+    }
+}

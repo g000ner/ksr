@@ -4,16 +4,15 @@ import {SearchBar} from "../../component/search";
 import { Category } from "../../component/category";
 import s from "./s.module.scss"
 
+
 const Layout = () => {
     return (
     <div>
     <Header />
     <div className={'container'}>
         <div className = {'row'} style= {{marginTop:'16px'}}>
-            <div className = {'col-2'}>
             <Category />
-            </div>
-            <div className = {'col-2'}></div>
+            <div className = {'col-3'}></div>
             <SearchBar />
             <div className={s.listCard}>
             <div className = {'row'}>
