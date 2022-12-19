@@ -1,0 +1,44 @@
+.icon{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    .avatar{
+        width: 160px;
+        height: 160px;
+
+        border-radius: 320px;
+    }
+}
+.title{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    .titleText{
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 33px;
+        }
+}
+.button{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4px;
+    margin-bottom: 8px; 
+}
+.text{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 920px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 33px;
+}
