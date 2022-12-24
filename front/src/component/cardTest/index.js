@@ -1,7 +1,7 @@
 import s from './s.module.scss';
 import avatar from './avatar.png';
 
-export const Card = () => {
+export const Card = (props) => {
     return (
     <div className={s.card}>
         <div className={s.icon}>
@@ -12,7 +12,7 @@ export const Card = () => {
                 />
         </div>
         <div className={s.name}>
-             Электроприборы
+             {props.test.name}
         </div>
     </div> 
     );

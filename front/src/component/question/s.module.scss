@@ -1,3 +1,7 @@
+li {
+    //list-style: decimal;
+}
+
 .back{
     display: block;
     margin-left: auto;
@@ -19,6 +23,7 @@
     width: 1000px;
     height: 690px;
     .block{
+        max-width: 600px;
         display: block;
         top: 70%;
         left: 50%;
@@ -34,14 +39,14 @@
             font-family: 'Roboto';
             font-style: normal;
             font-weight: 700;
-            font-size: 28px;
+            font-size: 20px;
             line-height: 33px;
         }
         .text{
             font-family: 'Roboto';
             font-style: normal;
             font-weight: 400;
-            font-size: 24px;
+            font-size: 16px;
             line-height: 33px;
         }
     }

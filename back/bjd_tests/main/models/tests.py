@@ -12,4 +12,4 @@ class Tests(models.Model):
     description = models.TextField()
     imageURL = models.URLField()
     category_id = models.ForeignKey('Categories', on_delete=models.PROTECT)
-    first_question_id = models.ForeignKey('Questions', on_delete=models.PROTECT)
+    first_question_id = models.ForeignKey('Questions', on_delete=models.PROTECT, null=True)
