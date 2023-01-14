@@ -5,9 +5,6 @@ import Question from "../../component/question";
 
 
 const test = () => {
-    
-
-
     return (
     <div>
     <Header />

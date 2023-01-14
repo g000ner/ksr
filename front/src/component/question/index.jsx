@@ -3,14 +3,17 @@ import s from "./s.module.scss";
 import { Link } from "react-router-dom";
 import { useState, useEffect} from "react";
 import axios from 'axios';
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 
 
 const Question = () => {
     const [question, setQuestion] = useState('');
     const [answers, setAnswers] = useState([]);
+    const [currAnswer, setCurrAnswer] = useState('');
 
     const params = useParams();
+
+    const navigate = useNavigate();
 
     const fetchedQuestion = async (id) => {
         const url = "http://127.0.0.1:8000/api/v1/questions/" + String(id) + "/";
@@ -18,9 +21,24 @@ const Question = () => {
         //console.log(fetchedQuestion);
         setQuestion(fetchedQuestion.data);
     }
+    
+    const fetchAnswers = async (id) => {
+        const url = "http://127.0.0.1:8000/api/v1/questions/" + String(id) + "/answers/";
+        const fetchedAnswers = await axios.get(url);
+        setAnswers(fetchedAnswers.data);
+    }
+
+    const onAnswerChanged = async (e) => {
+        setCurrAnswer(e.currentTarget.value);
+    }
+
+    const onQuestionChanged = async (e) => {
+        navigate(`/test/${params.id}/${currAnswer}`);
+    }
 
     useEffect(() => {
         fetchedQuestion(params.question_id);
+        fetchAnswers(params.question_id);
     }, []);
 
     return (
@@ -30,12 +48,10 @@ const Question = () => {
                 <br/>
                 <h6 className={s.title}>Ваши действия:</h6>
                 <div className={s.text}>
-                    <ol style={{"listStyle" : "decimal"}}>
-                        <li><Link>Залить все водой</Link></li>
-                        <li><Link>Засыпать землей из-под маминой фиалки</Link></li>
-                        <li><Link>Взять кухонное полотенце и накрыть</Link></li>
-                        <li><Link>Попытаться отключить из сети</Link></li>
-                    </ol>
+                    <form style={{"listStyle" : "decimal"}}>
+                            {answers.length > 0 ? answers.map(answer => <p><input name='question_answers' value={answer.next_question_id} type="radio" onChange={onAnswerChanged}/>{answer.content}</p>) : ''}
+                            <input type="submit" value='Ответить' onClick={onQuestionChanged}/>
+                    </form>
                 </div>
             </div>
         </div>
